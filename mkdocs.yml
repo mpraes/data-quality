@@ -1,0 +1,8 @@
+site_name: Meu projeto de data-quality
+
+theme:
+  name: material
+
+plugins:
+  - search
+  - mkdocstrings
