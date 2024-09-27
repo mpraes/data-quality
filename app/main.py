@@ -1,9 +1,11 @@
 import pandas as pd
 
 def verifica_idades(df):
-    for i in df['Idade']:
-        df['Msg'] = 'NaN'
-        if i < 18:
-            return df["Msg"] == 'Menor de idade'
+    df['Verificacao Maior'] = ''
+    for i, row in df.iterrows():
+        if row['Idade'] < 18:
+            df.loc[i, 'Verificacao Maior'] = 'Menor'
         else:
-            return df["Msg"] == 'Maior de idade'
+            df.loc[i, 'Verificacao Maior'] = 'Maior'
+    return df
+        

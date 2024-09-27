@@ -1,6 +1,9 @@
 from app.main import verifica_idades
 import pandas as pd
 
-df = pd.DataFrame({'Id': [1, 2], 'Nome': ['Renan', 'Maria'], 'Idade': [37, 6]})
-
-df = verifica_idades(df)
+def test_verifica_idades():
+    df = pd.DataFrame()
+    df['Idade'] = [18, 22]
+    df['Verificacao Maior'] = ['Maior', 'Maior']
+    assert verifica_idades(df)
+    
